@@ -1,0 +1,21 @@
+{
+  "name": "well-space-gridsome",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@gridsome/source-graphql": "^0.1.0",
+    "gridsome": "^0.7.0",
+    "moment": "^2.27.0",
+    "tailwindcss": "^1.7.3"
+  },
+  "devDependencies": {
+    "gridsome-plugin-tailwindcss": "^3.0.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
+    "vue-svg-loader": "^0.16.0"
+  }
+}
