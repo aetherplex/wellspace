@@ -1,43 +1,45 @@
 <template>
 	<div class="min-h-screen flex flex-col min-w-screen">
-		<header
-			class=" flex justify-between items-center h-20 header w-full fixed z-50 bg-white transition-all duration-200 ease-in"
-			:class="{
-				'shadow-lg': scrolled,
-				'border-none': scrolled,
-				border: !scrolled,
-				'border-solid': !scrolled,
-				'border-gray-300': !scrolled,
-			}"
-		>
-			<div
-				class="app-container flex justify-between items-center w-full md:max-w-5xl mx-auto mx-4"
+		<ClientOnly>
+			<header
+				class=" flex justify-between items-center h-20 header w-full fixed z-50 bg-white transition-all duration-200 ease-in"
+				:class="{
+					'shadow-lg': scrolled,
+					'border-none': scrolled,
+					border: !scrolled,
+					'border-solid': !scrolled,
+					'border-gray-300': !scrolled,
+				}"
 			>
-				<h1>
-					<g-link to="/" exact class="text-2xl font-bold logo"
-						><span class="text-black">Well</span
-						><span class="text-blue-500">Space</span></g-link
-					>
-				</h1>
-				<nav class="nav">
-					<g-link
-						class="nav__link text-gray-500 text-sm md:text-md lg:text-lg"
-						to="/courses/"
-						>Courses</g-link
-					>
-					<g-link
-						class="nav__link text-gray-500 ml-8 md:ml-20 lg:ml-20 text-sm md:text-md lg:text-lg"
-						to="/articles/"
-						>Articles</g-link
-					>
-					<g-link
-						class="nav__link text-gray-500 ml-8 md:ml-20 lg:ml-20 text-sm md:text-md lg:text-lg"
-						to="/contact/"
-						>Contact</g-link
-					>
-				</nav>
-			</div>
-		</header>
+				<div
+					class="app-container flex justify-between items-center w-full md:max-w-5xl mx-auto mx-4"
+				>
+					<h1>
+						<g-link to="/" exact class="text-2xl font-bold logo"
+							><span class="text-black">Well</span
+							><span class="text-blue-500">Space</span></g-link
+						>
+					</h1>
+					<nav class="nav">
+						<g-link
+							class="nav__link text-gray-500 text-sm md:text-md lg:text-lg"
+							to="/courses/"
+							>Courses</g-link
+						>
+						<g-link
+							class="nav__link text-gray-500 ml-8 md:ml-20 lg:ml-20 text-sm md:text-md lg:text-lg"
+							to="/articles/"
+							>Articles</g-link
+						>
+						<g-link
+							class="nav__link text-gray-500 ml-8 md:ml-20 lg:ml-20 text-sm md:text-md lg:text-lg"
+							to="/contact/"
+							>Contact</g-link
+						>
+					</nav>
+				</div>
+			</header>
+		</ClientOnly>
 		<div class="flex-1 w-full app-container">
 			<div>
 				<div class="mx-auto mb-0 mt-24 max-w-5xl md:mt-24 lg:mt-20">
