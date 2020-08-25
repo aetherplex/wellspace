@@ -3,7 +3,7 @@
 		<div>
 			<div>
 				<p
-					class="bg-gray-300 rounded-md text-gray-800 text-xs tracking-widest uppercase py-2 px-4 mb-4 inline-block mt-0 md:mt-10 lg:mt-10"
+					class="bg-gray-300 rounded-md text-gray-800 text-xs tracking-widest uppercase py-2 px-4 mb-4 inline-block mt-0 md:mt-0 lg:mt-10"
 				>
 					{{ $page.gcms.course.tag }}
 				</p>
