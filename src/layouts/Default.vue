@@ -74,17 +74,24 @@ export default {
 		};
 	},
 	created() {
-		window.addEventListener('scroll', this.handleScroll);
+		if (process.client) {
+			window.addEventListener('scroll', this.handleScroll);
+		}
 	},
 	destroyed() {
-		window.removeEventListener('scroll', this.handleScroll);
+		if (process.client) {
+			window.removeEventListener('scroll', this.handleScroll);
+		}
 	},
 	methods: {
 		handleScroll(e) {
-			this.scrolled =
-				document.body.scrollTop > 50 || document.documentElement.scrollTop > 50
-					? true
-					: false;
+			if (process.client) {
+				this.scrolled =
+					document.body.scrollTop > 50 ||
+					document.documentElement.scrollTop > 50
+						? true
+						: false;
+			}
 		},
 	},
 };
