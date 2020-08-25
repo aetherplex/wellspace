@@ -74,12 +74,18 @@ export default {
 		};
 	},
 	created() {
-		document.addEventListener('scroll', (e) => {
+		window.addEventListener('scroll', this.handleScroll);
+	},
+	destroyed() {
+		window.removeEventListener('scroll', this.handleScroll);
+	},
+	methods: {
+		handleScroll(e) {
 			this.scrolled =
 				document.body.scrollTop > 50 || document.documentElement.scrollTop > 50
 					? true
 					: false;
-		});
+		},
 	},
 };
 </script>
