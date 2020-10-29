@@ -1,20 +1,35 @@
 <template>
-	<Layout>
-		<h1 class="mb-2">Contact</h1>
-		<hr class="mb-4" />
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque
-			omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum
-			odit fugit assumenda rem dolores inventore iste reprehenderit maxime!
-			Iusto.
-		</p>
-	</Layout>
+  <Layout>
+    <div>
+      <h1 class="mb-1">
+        {{ $page.allContentfulContact.edges[0].node.heading }}
+      </h1>
+      <hr class="mb-4" />
+      <p>
+        {{ $page.allContentfulContact.edges[0].node.paragraph }}
+      </p>
+    </div>
+  </Layout>
 </template>
 
 <script>
 export default {
-	metaInfo: {
-		title: 'Contact',
-	},
+  metaInfo: {
+    title: "Contact"
+  }
 };
 </script>
+
+<page-query>
+query {
+    allContentfulContact(sortBy: "DESC", limit: 1) {
+    edges {
+      node {
+        heading
+        paragraph
+      }
+    }
+  }
+}
+
+</page-query>

@@ -1,9 +1,11 @@
 <template>
   <div class="min-h-screen flex flex-col min-w-screen">
     <header
-      class="flex justify-between items-center h-20 header w-full fixed z-50 bg-white transition-all duration-200 ease-in shadow-lg"
+      class="flex justify-between items-center h-20 header w-full fixed z-50 bg-white transition-all duration-200 ease-in shadow-md"
     >
-      <div class="app-container flex justify-between items-center w-full md:max-w-5xl mx-auto mx-4">
+      <div
+        class="app-container flex justify-between items-center w-full md:max-w-5xl mx-auto mx-4"
+      >
         <h1>
           <g-link to="/" exact class="text-2xl font-bold logo">
             <span class="text-black">Well</span>
@@ -14,15 +16,18 @@
           <g-link
             class="nav__link text-gray-500 text-sm md:text-md lg:text-lg"
             to="/courses/"
-          >Courses</g-link>
+            >Courses</g-link
+          >
           <g-link
             class="nav__link text-gray-500 ml-8 md:ml-20 lg:ml-20 text-sm md:text-md lg:text-lg"
             to="/articles/"
-          >Articles</g-link>
+            >Articles</g-link
+          >
           <g-link
             class="nav__link text-gray-500 ml-8 md:ml-20 lg:ml-20 text-sm md:text-md lg:text-lg"
             to="/contact/"
-          >Contact</g-link>
+            >Contact</g-link
+          >
         </nav>
       </div>
     </header>
@@ -33,7 +38,9 @@
         </div>
       </div>
     </div>
-    <footer class="mt-8 py-8 text-white text-center justify-end w-full bg-blue-500">
+    <footer
+      class="mt-8 py-8 text-white text-center justify-end w-full bg-blue-500"
+    >
       <div class="mx-auto max-w-5xl">
         <p>&copy; WellSpace 2020</p>
       </div>
@@ -52,9 +59,9 @@ query {
 <script>
 export default {
   name: "Default",
-  data: function () {
+  data: function() {
     return {
-      scrolled: false,
+      scrolled: false
     };
   },
   created() {
@@ -76,8 +83,8 @@ export default {
             ? true
             : false;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

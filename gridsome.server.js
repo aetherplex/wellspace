@@ -8,38 +8,44 @@
 module.exports = function(api) {
 	api.createPages(async ({ graphql, createPage }) => {
 		const { data } = await graphql(`
-			{
-				gcms {
-					articles {
-						id
-						slug
+			query {
+				allContentfulArticle {
+					edges {
+						node {
+							id
+							slug
+						}
 					}
-					courses {
-						id
-						slug
+				}
+				allContentfulCourse {
+					edges {
+						node {
+							id
+							slug
+						}
 					}
 				}
 			}
 		`);
 
-		data.gcms.articles.forEach((article) => {
+		data.allContentfulArticle.edges.forEach(edge => {
 			createPage({
-				path: `/articles/${article.slug}/`,
-				component: './src/templates/Article.vue',
+				path: `/articles/${edge.node.slug}/`,
+				component: "./src/templates/Article.vue",
 				context: {
-					id: article.id,
-					slug: article.slug,
-				},
+					id: edge.node.id,
+					slug: edge.node.slug
+				}
 			});
 		});
-		data.gcms.courses.forEach((course) => {
+		data.allContentfulCourse.edges.forEach(edge => {
 			createPage({
-				path: `/courses/${course.slug}/`,
-				component: './src/templates/Course.vue',
+				path: `/courses/${edge.node.slug}/`,
+				component: "./src/templates/Course.vue",
 				context: {
-					id: course.id,
-					slug: course.slug,
-				},
+					id: edge.node.id,
+					slug: edge.node.slug
+				}
 			});
 		});
 	});
